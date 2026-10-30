@@ -33,7 +33,7 @@ class SlipObserverHelper(
             )
             TransactionQueue.addLog("เริ่มระบบเฝ้าดูรูปสลิปอัตโนมัติ (Safe Mode)")
         } catch (e: Exception) {
-            TransactionQueue.addLog("ไม่สามารถเริ่มเฝ้าดูรูปสลิป: ${e.message}")
+            TransactionQueue.addLog("ไม่สามารถเริ่มเฝ้าดูรูปสลิป: " + e.message)
         }
     }
 
@@ -50,7 +50,7 @@ class SlipObserverHelper(
                 MediaStore.Images.Media.DISPLAY_NAME,
                 MediaStore.Images.Media.RELATIVE_PATH
             )
-            val sortOrder = "${MediaStore.Images.Media.DATE_ADDED} DESC"
+            val sortOrder = MediaStore.Images.Media.DATE_ADDED + " DESC"
 
             context.contentResolver.query(
                 MediaStore.Images.Media.EXTERNAL_CONTENT_URI,
@@ -106,13 +106,13 @@ class SlipObserverHelper(
                         val item = TransactionItem(
                             bankName = bankName,
                             amount = validAmount,
-                            note = "สลิป $bankName"
+                            note = "สลิป " + bankName
                         )
                         onSlipDetected(item)
                     }
                 }
         } catch (e: Exception) {
-            TransactionQueue.addLog("อ่านสลิปผิดพลาด: ${e.message}")
+            TransactionQueue.addLog("อ่านสลิปผิดพลาด: " + e.message)
         }
     }
 }

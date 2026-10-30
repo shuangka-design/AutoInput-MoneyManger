@@ -82,8 +82,8 @@ class BankNotificationService : NotificationListenerService() {
 
         val notification = NotificationCompat.Builder(this, channelId)
             .setSmallIcon(android.R.drawable.ic_dialog_info)
-            .setContentTitle("จ่ายผ่าน ${item.bankName}: ${item.amount} บาท")
-            .setContentText("แตะเพื่อคัดลอกยอด ${item.amount} บ. และเปิดแอปหมูแดง (${item.note})")
+            .setContentTitle("จ่ายผ่าน " + item.bankName + ": " + item.amount + " บาท")
+            .setContentText("แตะเพื่อคัดลอกยอด " + item.amount + " บ. และเปิดแอปหมูแดง (" + item.note + ")")
             .setPriority(NotificationCompat.PRIORITY_HIGH)
             .setCategory(NotificationCompat.CATEGORY_MESSAGE)
             .setAutoCancel(true)

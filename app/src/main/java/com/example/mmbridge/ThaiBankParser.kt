@@ -32,7 +32,7 @@ object ThaiBankParser {
 
     fun parseNotification(packageName: String, title: String, text: String): TransactionItem? {
         val bankName = SUPPORTED_PACKAGES[packageName] ?: return null
-        val fullMessage = "$title $text"
+        val fullMessage = title + " " + text
 
         if (IGNORE_KEYWORDS.any { fullMessage.contains(it, ignoreCase = true) }) {
             return null
@@ -54,7 +54,7 @@ object ThaiBankParser {
 
         if (extractedAmount == null) return null
 
-        var note = "$bankName: ${text.take(40).replace("\n", " ")}"
+        var note = bankName + ": " + text.take(40).replace("\n", " ")
         for (regex in MERCHANT_REGEX_LIST) {
             val match = regex.find(fullMessage)
             if (match != null) {

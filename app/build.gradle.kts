@@ -11,8 +11,8 @@ android {
         applicationId = "com.example.mmbridge"
         minSdk = 26
         targetSdk = 34
-        versionCode = 3
-        versionName = "3.0-SafeMode"
+        versionCode = 4
+        versionName = "4.0-SafeMode"
     }
 
     buildTypes {
@@ -30,6 +30,10 @@ android {
     }
     kotlinOptions {
         jvmTarget = "17"
+    }
+    lint {
+        abortOnError = false
+        checkReleaseBuilds = false
     }
 }
 

@@ -121,7 +121,7 @@ class MainActivity : AppCompatActivity() {
                 Toast.LENGTH_LONG
             ).show()
         } catch (e: Exception) {
-            Toast.makeText(this, "เกิดข้อผิดพลาดในการสร้างไฟล์: ${e.message}", Toast.LENGTH_LONG).show()
+            Toast.makeText(this, "เกิดข้อผิดพลาดในการสร้างไฟล์: " + e.message, Toast.LENGTH_LONG).show()
         }
     }
 

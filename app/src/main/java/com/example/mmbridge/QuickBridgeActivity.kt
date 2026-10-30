@@ -22,7 +22,7 @@ class QuickBridgeActivity : AppCompatActivity() {
 
             Toast.makeText(
                 this,
-                "คัดลอกยอด $amount บ. ($bankName) แล้ว! กดวาง (Paste) ในแอปหมูแดงได้เลย",
+                "คัดลอกยอด " + amount + " บ. (" + bankName + ") แล้ว! กดวาง (Paste) ในแอปหมูแดงได้เลย",
                 Toast.LENGTH_LONG
             ).show()
         }

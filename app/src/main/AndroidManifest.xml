@@ -28,7 +28,7 @@
 
         <activity
             android:name=".QuickBridgeActivity"
-            android:theme="@style/Theme.AppCompat.Translucent"
+            android:theme="@style/Theme.AppCompat.Translucent.NoTitleBar"
             android:excludeFromRecents="true"
             android:taskAffinity=""
             android:exported="false" />
